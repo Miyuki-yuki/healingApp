@@ -14,6 +14,10 @@
 		96497CAE2AEDD9670023DA69 /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96497CAD2AEDD9660023DA69 /* MeditationView.swift */; };
 		96497CB02AEDE1270023DA69 /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96497CAF2AEDE1270023DA69 /* PlayerView.swift */; };
 		96497CB22AEDE57B0023DA69 /* PlaybackControlButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96497CB12AEDE57B0023DA69 /* PlaybackControlButton.swift */; };
+		96497CB42AEDF8630023DA69 /* MeditationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96497CB32AEDF8630023DA69 /* MeditationViewModel.swift */; };
+		96497CB62AEDFD040023DA69 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96497CB52AEDFD040023DA69 /* Extensions.swift */; };
+		96497CB82AEE9BBB0023DA69 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96497CB72AEE9BBB0023DA69 /* AudioManager.swift */; };
+		96497CBA2AEEA0170023DA69 /* meditationMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 96497CB92AEEA0170023DA69 /* meditationMusic.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,11 @@
 		96497CAD2AEDD9660023DA69 /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		96497CAF2AEDE1270023DA69 /* PlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
 		96497CB12AEDE57B0023DA69 /* PlaybackControlButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackControlButton.swift; sourceTree = "<group>"; };
+		96497CB32AEDF8630023DA69 /* MeditationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationViewModel.swift; sourceTree = "<group>"; };
+		96497CB52AEDFD040023DA69 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		96497CB72AEE9BBB0023DA69 /* AudioManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioManager.swift; sourceTree = "<group>"; };
+		96497CB92AEEA0170023DA69 /* meditationMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = meditationMusic.mp3; sourceTree = "<group>"; };
+		96497CBB2AEEAA300023DA69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,12 +66,17 @@
 		96497C9E2AEDD2720023DA69 /* HealingTimeApp */ = {
 			isa = PBXGroup;
 			children = (
+				96497CBB2AEEAA300023DA69 /* Info.plist */,
 				96497C9F2AEDD2720023DA69 /* HealingTimeAppApp.swift */,
 				96497CA12AEDD2720023DA69 /* ContentView.swift */,
 				96497CAF2AEDE1270023DA69 /* PlayerView.swift */,
 				96497CB12AEDE57B0023DA69 /* PlaybackControlButton.swift */,
 				96497CAD2AEDD9660023DA69 /* MeditationView.swift */,
+				96497CB72AEE9BBB0023DA69 /* AudioManager.swift */,
+				96497CB52AEDFD040023DA69 /* Extensions.swift */,
+				96497CB32AEDF8630023DA69 /* MeditationViewModel.swift */,
 				96497CA32AEDD2790023DA69 /* Assets.xcassets */,
+				96497CB92AEEA0170023DA69 /* meditationMusic.mp3 */,
 				96497CA52AEDD2790023DA69 /* Preview Content */,
 			);
 			path = HealingTimeApp;
@@ -135,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				96497CA72AEDD2790023DA69 /* Preview Assets.xcassets in Resources */,
+				96497CBA2AEEA0170023DA69 /* meditationMusic.mp3 in Resources */,
 				96497CA42AEDD2790023DA69 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -148,9 +163,12 @@
 			files = (
 				96497CA22AEDD2720023DA69 /* ContentView.swift in Sources */,
 				96497CAE2AEDD9670023DA69 /* MeditationView.swift in Sources */,
+				96497CB82AEE9BBB0023DA69 /* AudioManager.swift in Sources */,
 				96497CB22AEDE57B0023DA69 /* PlaybackControlButton.swift in Sources */,
 				96497CA02AEDD2720023DA69 /* HealingTimeAppApp.swift in Sources */,
+				96497CB42AEDF8630023DA69 /* MeditationViewModel.swift in Sources */,
 				96497CB02AEDE1270023DA69 /* PlayerView.swift in Sources */,
+				96497CB62AEDFD040023DA69 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +305,7 @@
 				DEVELOPMENT_TEAM = F4RCD25Z6W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealingTimeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +335,7 @@
 				DEVELOPMENT_TEAM = F4RCD25Z6W;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HealingTimeApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

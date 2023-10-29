@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PlayerView: View {
+    var meditationViewModel: MeditationViewModel
+    var isPreview: Bool = false
+    
     @State private var value: Double = 0.0
     @Environment(\.dismiss) var dismiss
     
@@ -38,7 +41,7 @@ struct PlayerView: View {
                     Spacer()
                 }
                 //title
-                Text("1 minute healing time")
+                Text(meditationViewModel.meditation.title)
                     .font(.title)
                     .foregroundStyle(.white)
                 
@@ -83,9 +86,17 @@ struct PlayerView: View {
             }
             .padding(20)
         }
+        .onAppear {
+            AudioManager.shared.startPlayer(track: meditationViewModel.meditation.track, isPreview: isPreview)
+        }
     }
 }
 
-#Preview {
-    PlayerView()
+struct PlayView_Previews: PreviewProvider {
+    static let meditationViewModel = MeditationViewModel(meditation: Meditation.data)
+    static var previews: some View {
+        PlayerView(meditationViewModel: meditationViewModel, isPreview: true)
+        
+    }
+ 
 }

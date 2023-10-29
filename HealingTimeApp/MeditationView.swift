@@ -8,11 +8,13 @@
 import SwiftUI
 
 struct MeditationView: View {
+    @StateObject var meditationViewModel: MeditationViewModel
     @State private var showPlayer = false
+    
     
     var body: some View {
         VStack(spacing: -20) {
-            Image("5")
+            Image(meditationViewModel.meditation.image)
                 .resizable()
                 .scaledToFit()
                 .frame(height: UIScreen.main.bounds.height / 2)
@@ -25,14 +27,14 @@ struct MeditationView: View {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Music")
                         
-                        Text("0s")
+                        Text(DateComponentsFormatter.abbreviated.string(from: meditationViewModel.meditation.duration) ?? meditationViewModel.meditation.duration.formatted() + "S")
                         
                     }
                     .font(.subheadline)
                     .textCase(.uppercase)
                     .opacity(0.7)
                     //Title
-                    Text("1 minute healing time")
+                    Text(meditationViewModel.meditation.title)
                     
                     Button {
                         showPlayer = true
@@ -47,7 +49,7 @@ struct MeditationView: View {
                             
                     }
                     //add the description
-                    Text("Close your eyes and clear your mind. Then, breathe slowly.")
+                    Text(meditationViewModel.meditation.description)
                     
                     Spacer()
                     
@@ -59,11 +61,14 @@ struct MeditationView: View {
         }
         .ignoresSafeArea()
         .fullScreenCover(isPresented: $showPlayer) {
-            PlayerView()
+            PlayerView(meditationViewModel: meditationViewModel)
         }
     }
 }
 
-#Preview {
-    MeditationView()
+struct MeditationView_Previews: PreviewProvider {
+    static let meditationViewModel = MeditationViewModel(meditation:  Meditation.data)
+    static var previews: some View {
+        MeditationView(meditationViewModel: meditationViewModel)
+    }
 }
