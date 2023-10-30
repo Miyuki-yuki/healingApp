@@ -9,7 +9,7 @@ import Foundation
 
 extension DateComponentsFormatter {
     static let abbreviated: DateComponentsFormatter = {
-        print("Initializing DateComponentsFormatter.shortened")
+        print("Initializing DateComponentsFormatter.abbreviated")
         let formatter = DateComponentsFormatter()
         
         formatter.allowedUnits = [.hour, .minute, .second]
@@ -19,7 +19,7 @@ extension DateComponentsFormatter {
     }()
     
     static let positional: DateComponentsFormatter = {
-        print("Initializing DateComponentsFormatter.shortened")
+        print("Initializing DateComponentsFormatter.positional")
         let formatter = DateComponentsFormatter()
         
         formatter.allowedUnits = [.minute, .second]

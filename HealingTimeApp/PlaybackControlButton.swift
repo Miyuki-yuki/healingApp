@@ -15,7 +15,7 @@ struct PlaybackControlButton: View {
     
     var body: some View {
         Button {
-            
+            action()
         } label: {
             Image(systemName: systemName)
                 .font(.system(size:fontSize))

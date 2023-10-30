@@ -11,13 +11,12 @@ struct MeditationView: View {
     @StateObject var meditationViewModel: MeditationViewModel
     @State private var showPlayer = false
     
-    
     var body: some View {
-        VStack(spacing: -20) {
+        VStack(spacing: -50) {
             Image(meditationViewModel.meditation.image)
                 .resizable()
                 .scaledToFit()
-                .frame(height: UIScreen.main.bounds.height / 2)
+                .frame(height: UIScreen.main.bounds.height / 1.25)
             
             ZStack {
                 Color(red: 24/255, green: 23/255, blue: 22/255)
@@ -70,5 +69,6 @@ struct MeditationView_Previews: PreviewProvider {
     static let meditationViewModel = MeditationViewModel(meditation:  Meditation.data)
     static var previews: some View {
         MeditationView(meditationViewModel: meditationViewModel)
+            .environmentObject(AudioManager())
     }
 }

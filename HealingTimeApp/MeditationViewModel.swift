@@ -8,6 +8,7 @@
 import Foundation
 
 final class MeditationViewModel: ObservableObject {
+    
     private(set) var meditation: Meditation
     
     init(meditation: Meditation) {
@@ -23,7 +24,7 @@ struct Meditation {
     let track: String
     let image: String
     
-    static let data = Meditation(title: "1 minute healing time", description: "Close your eyes and clear your mind. Then, breathe slowly.", duration: 70, track: "meditatinMusic", image: "15")
+    static let data = Meditation(title: "1 minute healing time", description: "Close your eyes and clear your mind. Then, breathe slowly.", duration: 70, track: "meditationMusic", image: "15")
     
     
 }

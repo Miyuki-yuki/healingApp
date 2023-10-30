@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct HealingTimeAppApp: App {
+    @StateObject var audioManager = AudioManager()
+    
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(audioManager)
         }
     }
 }
